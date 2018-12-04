@@ -1,0 +1,8 @@
+papers:
+ - type: A4
+   singleSided:
+    blackAndWhite: 15
+    color: 25
+   doubleSided:
+     blackAndWhite: 10
+     color: 20
