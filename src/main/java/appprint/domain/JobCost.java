@@ -18,7 +18,7 @@ public class JobCost {
 
     @Override
     public String toString() {
-        return String.format("%s - $%.2f",
+        return String.format("%s - Cost = $%.2f",
                 job.toString(), cost);
     }
 }

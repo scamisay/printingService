@@ -34,7 +34,8 @@ public class App {
         double total = costs.stream()
                 .mapToDouble(JobCost::getCost)
                 .sum();
-        System.out.println(String.format("\njobs: %d - total: $%.2f",
-                costs.size(), total));
+        System.out.println(String.format("\nNumber of Jobs =  %d",
+                costs.size()));
+        System.out.println(String.format("Total Cost = $%.2f", total));
     }
 }

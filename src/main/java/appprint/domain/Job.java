@@ -58,7 +58,7 @@ public class Job {
 
     @Override
     public String toString() {
-        return String.format("T:%d - C:%d - D:%b",
+        return String.format("Total Pages = %d - Color Pages = %d - Double = %b",
                 getTotalPages(), getColorPages(),isDouble());
     }
 
