@@ -12,10 +12,6 @@ public class JobCost {
         this.cost = calculator.calculate(job);
     }
 
-    public Job getJob() {
-        return job;
-    }
-
     public Double getCost() {
         return cost;
     }

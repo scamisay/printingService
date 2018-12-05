@@ -2,16 +2,18 @@ package appprint.service;
 
 import appprint.domain.Job;
 import appprint.domain.PaperType;
-import appprint.domain.Papers;
+
+import java.util.List;
 
 public class CostCalculator {
 
-    private Papers papers;
+    private List<PaperType> papers;
     private String defaultType;
 
-    public CostCalculator(Papers papers, String defaultType) {
-        this.papers = papers;
-        this.defaultType = defaultType;
+    public CostCalculator() {
+        PropertyLoader propertyLoader = new PropertyLoader();
+        this.papers = new PapersTypeLoader(propertyLoader.getPaperSettingFile()).getPaperTypeList();
+        this.defaultType = propertyLoader.getDefaultPaperType();
     }
 
     public Double calculate(Job job){
@@ -25,12 +27,12 @@ public class CostCalculator {
             c = type.getSingleSided().getColor();
         }
 
-        int bwPages = (job.getTotalPages()-job.getColorPages());
-        return (bwPages*bw + job.getColorPages()*c)/100.;
+        int totalValueInCents = job.getBlackAndWhitePages()*bw + job.getColorPages()*c;
+        return totalValueInCents / 100.;
     }
 
     private PaperType findByPaperType(String paperType){
-        return papers.getPapers().stream().filter(pt -> pt.getType().equals(paperType))
+        return papers.stream().filter(pt -> pt.getType().equals(paperType))
                 .findFirst().orElse(null);
     }
 }
