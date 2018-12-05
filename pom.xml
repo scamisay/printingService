@@ -49,6 +49,9 @@
                             <mainClass>appprint.App</mainClass>
                         </manifest>
                     </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
                     <finalName>printingService</finalName>
                 </configuration>
             </plugin>
