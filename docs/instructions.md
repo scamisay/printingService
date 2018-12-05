@@ -3,6 +3,11 @@ java -jar printingService-jar-with-dependencies.jar FILE_WITH_JOBS.csv
 
 You only need to have Java 8 installed, printingService-jar-with-dependencies.jar file and the CSV file you want to process.
 
+#regenerate target directory
+Here are created the executable file from the code. For this you need to be in the project directory and run on the console:
+
+mvn clean test compile assembly:single
+
 #run example
 
 - example file src/main/resources/jobs.csv:
