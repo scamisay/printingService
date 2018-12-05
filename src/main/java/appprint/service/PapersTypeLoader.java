@@ -5,7 +5,6 @@ import appprint.domain.PaperType;
 import appprint.domain.Papers;
 import org.yaml.snakeyaml.Yaml;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.util.List;
 
