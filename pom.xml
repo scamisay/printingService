@@ -26,6 +26,16 @@
             <version>4.11</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.plexus</groupId>
+            <artifactId>plexus-utils</artifactId>
+            <version>1.1</version>
+        </dependency>
     </dependencies>
 
     <!--<build>
@@ -41,6 +51,7 @@
         </plugins>
     </build>-->
 
+
     <build>
         <plugins>
             <plugin>
@@ -49,6 +60,7 @@
                 <configuration>
                     <archive>
                         <manifest>
+                            <addClasspath>true</addClasspath>
                             <mainClass>appprint.App</mainClass>
                         </manifest>
                     </archive>
