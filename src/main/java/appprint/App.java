@@ -8,11 +8,16 @@ import java.util.List;
 public class App {
 
     public static void main(String[] args){
+        //check user has introduced CSV file name to continue
         if(!areArgumentsValid(args)){
             printHelp();
         }else{
             String inputFileName = args[0];
+
+            //parsing file and instantiating Jobs
             PrintingJobService service = new PrintingJobService(inputFileName);
+
+            //calculating jobs costs
             List<JobCost> costs = service.calculateCosts();
             printCosts(costs);
         }

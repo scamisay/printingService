@@ -14,6 +14,9 @@ public class Job {
     private int colorPages;
     private boolean isDouble;
 
+    /**
+     * This constructor parse a line from the CSV file into a Job instance. Validations and error handling are carried out
+     */
     public Job(String line) {
         if(line == null || line.isEmpty()){
             throw new RuntimeException("Error trying to parse empty line");
@@ -34,6 +37,14 @@ public class Job {
         }
     }
 
+    /**
+     * This is a generic method to parse a given field to a given Type and handles errors with appropriate messages
+     * @param parser
+     * @param value
+     * @param field
+     * @param <T>
+     * @return T
+     */
     private <T> T parseField(Function<String,T> parser, String value, int field){
         try{
             return parser.apply(value.trim());
